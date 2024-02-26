@@ -20,13 +20,13 @@ body {
     padding: 0;
     background: var(--main-color);
     font-family: "Open Sans", sans-serif;
-    font-size: 1.3em;
-    line-height: 1.5em;
+    font-size: 1em;
+    line-height: 1.2em;
 }
 
 .container {
-    max-width: 450px;
-    margin: 10px auto;
+    max-width: 350px;
+    margin: 50px auto;
     background: white;
     padding: 10px;
     border-radius: 10px;
@@ -40,6 +40,7 @@ h1 {
     text-align: center;
     color: #93558c;
     margin-top: 10px;
+    width: 100%;
 }
 
 .table-container {
@@ -63,6 +64,9 @@ p {
     font-size: 0.90em;
 }
 
+form {
+    margin-bottom: 20px;
+}
 
 form input, 
 form label,
@@ -73,9 +77,9 @@ form button {
 }
 
 form input {
-    font-size: 24px;
-    height: 40px;
-    padding: 0 20px;
+    font-size: 20px;
+    height: 35px;
+    padding: 0 15px;
 }
 
 form input:focus {
@@ -86,9 +90,9 @@ form button {
     border: none;
     color: white;
     background: var(--main-color);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
-    height: 40px;
+    height: 35px;
     cursor: pointer;
     margin-top: 10px;
 }
