@@ -26,9 +26,9 @@ body {
 
 .container {
     max-width: 450px;
-    margin: 50px auto;
+    margin: 10px auto;
     background: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 10px 9px 20px 1px  black;
 }
@@ -39,6 +39,7 @@ h1 {
     font-size: 1em;
     text-align: center;
     color: #93558c;
+    margin-top: 10px;
 }
 
 .table-container {
@@ -52,12 +53,14 @@ h1 {
 }
 
 h2 {
+    margin-top: 0;
     margin-bottom: 20px;
     font-size: 1em;
 }
 
 p {
     margin: 0;
+    font-size: 0.90em;
 }
 
 
@@ -66,7 +69,7 @@ form label,
 form button {
     display: block;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 form input {
@@ -87,7 +90,7 @@ form button {
     font-weight: 700;
     height: 40px;
     cursor: pointer;
-    margin-top: 40px;
+    margin-top: 10px;
 }
 
 form button:hover {
@@ -102,7 +105,7 @@ form button:active {
     background: var(--color-res-valid);
     box-shadow: 5px 5px 10px 1px;
     border-radius: 5px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .p-result-invalid {
