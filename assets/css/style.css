@@ -1,0 +1,125 @@
+@charset "pt-BR";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --main-color:#8E6CD6;
+    --main-color-dark:#403458;
+    --main-color-active:#93558c;
+    --color-res-valid:#9cce8c6b;
+    --color-res-invalid:#e70b0b53;
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--main-color);
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.3em;
+    line-height: 1.5em;
+}
+
+.container {
+    max-width: 450px;
+    margin: 50px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 9px 20px 1px  black;
+}
+
+h1 {
+    background: #ebebec;
+    box-shadow: 10px 9px 20px 1px  black;
+    font-size: 1em;
+    text-align: center;
+    color: #93558c;
+}
+
+.table-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.table-column {
+    flex: 1;
+    text-align: left;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 1em;
+}
+
+p {
+    margin: 0;
+}
+
+
+form input, 
+form label,
+form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 24px;
+    height: 40px;
+    padding: 0 20px;
+}
+
+form input:focus {
+    outline: 1px solid var(--main-color);
+}
+
+form button {
+    border: none;
+    color: white;
+    background: var(--main-color);
+    font-size: 18px;
+    font-weight: 700;
+    height: 40px;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+form button:hover {
+    background: var(--main-color-dark);
+}
+
+form button:active {
+    background: var(--main-color-active);
+}
+
+.p-result-valid, .p-result-invalid {
+    background: var(--color-res-valid);
+    box-shadow: 5px 5px 10px 1px;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.p-result-invalid {
+    background: var(--color-res-invalid);
+}
+
+.footer {
+    position: absolute;
+    align-items: center;
+    padding: 0.62em;
+    background: #2a292b;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-text p {
+    font-size: 0.80rem;
+    text-align: center;
+    color: #fffefe7c;
+}

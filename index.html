@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela BMI</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- section design -->
+    <section class="container">
+        <h1>BMI table</h1>
+        
+        <div class="table-container">
+            <div class="table-column">
+                <h2>BMI</h2>
+                <p> Menos que 18.5 </p>
+                <p>Entre 18.5 e 24.9</p>
+                <p>Entre 25 e 29.9</p>
+                <p>Entre 30 e 34.9</p>
+                <p>Entre 35 e 39.9</p>
+                <p>Mais que 40</p>
+            </div>
+            <div class="table-column">
+                <h2>Result</h2>
+                <p>Abaixo do Peso</p>
+                <p>Peso Normal</p>
+                <p>Sobrepeso</p>
+                <p>Obesidade Grau 1</p>
+                <p>Obesidade Grau 2</p>
+                <p>Obesidade Grau 3</p>
+            </div>
+        </div>
+        <h1>Calculate your BMI</h1>
+        
+        <form action="/" class="form" method="post">
+            <label for="weight">Weight:</label>
+            <input type="text" id="weight" name="weight">
+
+            <label for="height">Height:</label>
+            <input type="text" id="height" name="height">
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div class="result"></div>
+    </section>
+
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-text">
+            <p>Copyright &copy; 2024 by pLogicador | All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
