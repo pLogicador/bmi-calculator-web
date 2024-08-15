@@ -1,3 +1,61 @@
+const form = document.querySelector('.form');
+
+function calculateBMI(weight, height){
+    return (weight / (height ** 2)).toFixed(2);
+};
+
+function getBMICategory(bmi) {
+    const categories = ['Underweight', 'Normal Weight', 'Overweight', 
+                        'Obesity Grade 1', 'Obesity Grade 2', 'Obesity Grade 3'];
+
+    if (bmi >= 39.9) return categories[5];
+    if (bmi >= 34.9) return categories[4];
+    if (bmi >= 29.9) return categories[3];
+    if (bmi >= 24.9) return categories[2];
+    if (bmi >= 18.5) return categories[1];
+    return categories[0];
+}
+
+function createParagraph(msg, isValid) {
+    const p = document.createElement('p');
+    p.classList.add(isValid ? 'p-valid-result' : 'p-invalid-result');
+    p.textContent = msg;
+    return p;
+}
+
+function displayResult(message, isValid) {
+    const resultContainer = document.querySelector('.result');
+    resultContainer.innerHTML = '';
+    resultContainer.appendChild(createParagraph(message, isValid));
+}
+
+function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const weightInput = event.target.querySelector('#weight');
+    const heightInput = event.target.querySelector('#height');
+    const weight = parseFloat(weightInput.value);
+    const height = parseFloat(heightInput.value);
+
+    if (isNaN(weight) || weight <= 0) {
+        displayResult('Invalid weight!', false);
+        return;
+    }
+
+    if (isNaN(height) || height <= 0) {
+        displayResult('Invalid height!', false);
+        return;
+    }
+
+    const bmi = calculateBMI(weight, height);
+    const category = getBMICategory(bmi);
+    const message = `Your BMI is ${bmi} (${category})`;
+
+    displayResult(message, true);
+}
+
+form.addEventListener('submit', handleFormSubmit);
+
 /**
  * Body Mass Index (BMI) Calculator
  * 
@@ -27,66 +85,3 @@
  * 
  * Refer to the open-source license for more details.
  */
-
-const form = document.querySelector('.form');
-
-function getBmi(weight, height){
-    const bmi = weight / (height * height);
-    return bmi.toFixed(2);
-};
-
-function getLevelsBmi(bmi){
-    const level = ['Abaixo do Peso', 'Peso Normal', 'SobrePeso', 
-    'Obesidade Grau 1', 'Obesidade Grau 2', 'Obesidade Grau 3'];
-
-    if (bmi >= 39.9) return level[5];
-    if (bmi >= 34.9) return level[4];
-    if (bmi >= 29.9) return level[3];
-    if (bmi >= 24.9) return level[2];
-    if (bmi >= 18.5) return level[1];
-    if (bmi < 18.5) return level[0];
-}
-
-function createParagraph() {
-    const p = document.createElement('p');
-    return p
-}
-
-function setResult(msg, isValid) {
-    const result = document.querySelector('.result');
-    result.innerHTML = '';
-
-    const p = createParagraph();
-    if(isValid) {
-        p.classList.add('p-result-valid');
-    } else {
-        p.classList.add('p-result-invalid');
-    }
-
-    p.innerHTML = msg;
-    result.appendChild(p);
-}
-
-form.addEventListener('submit', function(event) {
-    event.preventDefault();
-    const inputWeight = event.target.querySelector('#weight');
-    const inputHeight = event.target.querySelector('#height');
-    const weight = Number(inputWeight.value);
-    const height = Number(inputHeight.value);
-
-    if (!weight) {
-        setResult('Peso inválido!', false);
-        return;
-    }
-
-    if (!height) {
-        setResult('Altura inválida!', false);
-        return;
-    }
-
-    const bmi = getBmi(weight, height);
-    const levelBmi = getLevelsBmi(bmi);
-    const msg = `Your BMI is ${bmi} (${levelBmi})`;
-
-    setResult(msg, true);
-});

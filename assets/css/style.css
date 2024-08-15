@@ -105,14 +105,14 @@ form button:active {
     background: var(--main-color-active);
 }
 
-.p-result-valid, .p-result-invalid {
+.p-valid-result, .p-invalid-result {
     background: var(--color-res-valid);
     box-shadow: 5px 5px 10px 1px;
     border-radius: 5px;
     padding: 10px;
 }
 
-.p-result-invalid {
+.p-invalid-result {
     background: var(--color-res-invalid);
 }
 
